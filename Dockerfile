@@ -18,8 +18,7 @@ RUN apk del python \
       && rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm \
       && npm cache clean --force
 
-USER node
-RUN mkdir -p /home/node/src
+RUN mkdir -p /opt/src
 
-VOLUME /home/node/src
-WORKDIR /home/node/src
+VOLUME /opt/src
+WORKDIR /opt/src

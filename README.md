@@ -27,7 +27,7 @@ docker run adorsys/angular-cli:latest <your ng command>
 ### Usage example
 
 ```
-docker run --rm -v `pwd`:/home/node/src local/angular-cli:latest ng build
+docker run --rm -v `pwd`:/opt/src local/angular-cli:latest ng build
 ```
 
 ## License
