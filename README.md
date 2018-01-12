@@ -9,7 +9,7 @@ _                      _                 ____ _     ___
 |___/
 
 Angular CLI: 1.6.4
-Node: 9.4.0
+Node: 8.9.4
 npm: 5.6.0
 OS: linux x64 (alpine)
 ```
