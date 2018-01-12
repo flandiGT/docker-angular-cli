@@ -1,4 +1,4 @@
-FROM node:9.3.0-alpine
+FROM node:9.4.0-alpine
 
 MAINTAINER https://github.com/adorsys/dockerhub-angular-cli
 
@@ -11,7 +11,7 @@ USER node
 RUN mkdir /home/node/.npm-global
 ENV PATH=/home/node/.npm-global/bin:$PATH
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
-RUN npm install -g @angular/cli@1.6.1
+RUN npm install -g @angular/cli@1.6.4
 
 USER root
 RUN apk del python \
