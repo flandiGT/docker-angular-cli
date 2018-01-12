@@ -14,8 +14,7 @@ ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 RUN npm install -g @angular/cli@1.6.4
 
 USER root
-RUN apk del python \
-      && rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm \
+RUN rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm \
       && npm cache clean --force
 
 RUN mkdir -p /opt/src
