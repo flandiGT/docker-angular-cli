@@ -11,7 +11,7 @@ USER node
 RUN mkdir /home/node/.npm-global
 ENV PATH=/home/node/.npm-global/bin:$PATH
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
-RUN npm install -g @angular/cli@1.6.4
+RUN npm install -g @angular/cli@1.6.5
 
 USER root
 RUN rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm \
