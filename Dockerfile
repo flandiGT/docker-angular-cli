@@ -7,15 +7,13 @@ RUN apk update \
 
 # needed to fix infinite loop during installation
 # https://github.com/angular/angular-cli/issues/7389
-USER node
-RUN mkdir /home/node/.npm-global
-ENV PATH=/home/node/.npm-global/bin:$PATH
-ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
-RUN npm install -g @angular/cli@1.6.5
+RUN mkdir /root/.npm-global
+ENV PATH=/root/.npm-global/bin:$PATH
+ENV NPM_CONFIG_PREFIX=/root/.npm-global
+RUN npm install --unsafe-perm -g @angular/cli@1.6.5 --allow-root
 
-USER root
-RUN rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm \
-      && npm cache clean --force
+RUN npm cache verify && npm cache clean --force
+RUN rm -rf /tmp/* /var/cache/apk/* *.tar.gz
 
 RUN mkdir -p /opt/src
 
